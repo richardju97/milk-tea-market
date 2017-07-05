@@ -11,5 +11,5 @@ class Customer:
         return self.preferences
 
 # Test
-A = Customer()
-print(A.getPreferences())
+#A = Customer()
+#print(A.getPreferences())
