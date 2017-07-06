@@ -4,7 +4,7 @@
 class Store:
     def __init__(self, name, price):
         self.name = name
-        self.price = price
+        self.price = int(price)
         self.totalrevenue = 0
         self.dailyrevenue = 0
 
@@ -12,10 +12,10 @@ class Store:
         return self.price
 
     def changePrice(self, price):
-        self.price = price
+        self.price = int(price)
 
     def processSale(self):
-        self.dailyrevenue += int(self.price)
+        self.dailyrevenue += self.price
 
     def getDailyRevenue(self):
         return self.dailyrevenue
