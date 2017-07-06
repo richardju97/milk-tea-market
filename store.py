@@ -10,3 +10,10 @@ class Store:
 
     def changePrice(self, price):
         self.price = price
+
+    def processSale(self):
+        self.dailyrevenue += self.price
+
+    def aggregateRevenue(self):
+        self.totalrevenue += self.dailyrevenue
+        self.dailyrevenue = 0
