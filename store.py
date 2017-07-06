@@ -23,3 +23,6 @@ class Store:
     def aggregateRevenue(self):
         self.totalrevenue += self.dailyrevenue
         self.dailyrevenue = 0
+
+    def getTotalRevenue(self):
+        return self.totalrevenue
