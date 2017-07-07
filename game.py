@@ -26,7 +26,7 @@ days = 0
 while (allPlayers[0].getPrice() < 11 and sales != 0):
     sales = 0
     for i in p:
-        if (i > allPlayers[0].getPrice()):
+        if (i >= allPlayers[0].getPrice()):
             allPlayers[0].processSale()
             sales += 1
 
