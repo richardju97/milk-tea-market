@@ -23,7 +23,7 @@ print("There are " + str(len(p)) + " potential customers.")
 
 # At the moment preferences only contains maximum value point (how much the customer is willing to pay at most)
 sales = None
-days = 0
+#days = 0
 while (allPlayers[0].getPrice() < 11 and sales != 0):
     sales = 0
     for i in p:
@@ -37,7 +37,7 @@ while (allPlayers[0].getPrice() < 11 and sales != 0):
         print("----------------------\n")
         allPlayers[x].changePrice(allPlayers[x].getPrice() + 1)
         allPlayers[x].aggregateRevenue()
-        days += 1
+#        days += 1
 
 print("End of Simulation Results:")
-print("In total, we operated for " + str(days) + " days and made $" + str(allPlayers[0].getTotalRevenue()) + " in revenue.")
+print("In total, " + str(allPlayers[0].getName()) + " operated for " + str(allPlayers[0].getOpDays()) + " days and made $" + str(allPlayers[0].getTotalRevenue()) + " in revenue.")
