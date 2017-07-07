@@ -6,6 +6,7 @@ import store
 
 numPlayers = int(input("Enter Number of Players Playing: "))
 populationSize = int(input("Enter desired population size for this simulation: "))
+maxDays = int(input("Enter maximum number of operation days:"))
 allPlayers = []
 
 for x in range(0, numPlayers):
@@ -24,7 +25,9 @@ print("There are " + str(len(p)) + " potential customers.")
 # At the moment preferences only contains maximum value point (how much the customer is willing to pay at most)
 sales = None
 #days = 0
-while (allPlayers[0].getPrice() < 11 and sales != 0):
+day = 0
+while (day != maxDays):
+#while (allPlayers[0].getPrice() < 11 and sales != 0):
     sales = 0
     for i in p:
         if (i >= allPlayers[0].getPrice()):
@@ -38,6 +41,9 @@ while (allPlayers[0].getPrice() < 11 and sales != 0):
         allPlayers[x].changePrice(allPlayers[x].getPrice() + 1)
         allPlayers[x].aggregateRevenue()
 #        days += 1
+    day += 1
 
 print("End of Simulation Results:")
-print("In total, " + str(allPlayers[0].getName()) + " operated for " + str(allPlayers[0].getOpDays()) + " days and made $" + str(allPlayers[0].getTotalRevenue()) + " in revenue.")
+
+for y in range(0, numPlayers):
+    print(str(allPlayers[0].getName()) + " operated for " + str(allPlayers[0].getOpDays()) + " days and made $" + str(allPlayers[0].getTotalRevenue()) + " in revenue.")
