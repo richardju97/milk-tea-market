@@ -21,9 +21,10 @@ for x in range(0, numPlayers):
 p = population.generatePopulation(populationSize)
 print(p) #only here for dev/debugging purposes
 print("There are " + str(len(p)) + " potential customers.")
+print("----------------------\n")
 
 # At the moment preferences only contains maximum value point (how much the customer is willing to pay at most)
-sales = None
+#sales = None
 #days = 0
 day = 0
 while (day != maxDays):
@@ -31,8 +32,11 @@ while (day != maxDays):
     sales = 0
     for i in p:
         if (i >= allPlayers[0].getPrice()):
-            allPlayers[0].processSale()
-            sales += 1
+            # for now we assume that all places have the same price
+            decision = randint(0, numPlayers)
+            allPlayers[decision].processSale()
+#            sales += 1
+            
 
     for x in range(0, numPlayers):
         print("We had " + str(sales) + " sales at $" + str(allPlayers[x].getPrice()) + " per sale.")
@@ -46,4 +50,4 @@ while (day != maxDays):
 print("End of Simulation Results:")
 
 for y in range(0, numPlayers):
-    print(str(allPlayers[0].getName()) + " operated for " + str(allPlayers[0].getOpDays()) + " days and made $" + str(allPlayers[0].getTotalRevenue()) + " in revenue.")
+    print(str(allPlayers[y].getName()) + " operated for " + str(allPlayers[y].getOpDays()) + " days and made $" + str(allPlayers[y].getTotalRevenue()) + " in revenue.")
