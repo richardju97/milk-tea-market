@@ -4,31 +4,38 @@
 import population
 import store
 
-p = population.generatePopulation(5)
-print(p)
+numPlayers = int(input("Enter Number of Players Playing: "))
+populationSize = input("Enter desired population size for this simulation: ")
+allPlayers = []
 
-myStoreName = input("Please select your store's name: ")
-myStorePrice = input("Please select what price to sell your boba: ")
-print("----------------------\n")
-myStore = store.Store(myStoreName, myStorePrice)
-#print(myStore)
+for x in range(0, numPlayers):
+
+    myStoreName = input("Please select your store's name: ")
+    myStorePrice = input("Please select what price to sell your boba: ")
+    print("----------------------\n")
+    allPlayers.append(store.Store(myStoreName, myStorePrice))
+    #myStore = store.Store(myStoreName, myStorePrice)
+    #print(myStore)
+
+p = population.generatePopulation(int(populationSize))
+print(p)
 
 # At the moment preferences only contains maximum value point (how much the customer is willing to pay at most)
 sales = None
 days = 0
-while (myStore.getPrice() < 11 and sales != 0):
+while (allPlayers[0].getPrice() < 11 and sales != 0):
     sales = 0
     for i in p:
-        if (i > myStore.getPrice()):
-            myStore.processSale()
+        if (i > allPlayers[0].getPrice()):
+            allPlayers[0].processSale()
             sales += 1
 
     print("There are " + str(len(p)) + " potential customers.")
-    print("We had " + str(sales) + " sales at $" + str(myStore.getPrice()) + " per sale.")
-    print("We made $" + str(myStore.getDailyRevenue()) + " today.")
+    print("We had " + str(sales) + " sales at $" + str(allPlayers[0].getPrice()) + " per sale.")
+    print("We made $" + str(allPlayers[0].getDailyRevenue()) + " today.")
     print("----------------------\n")
-    myStore.changePrice(myStore.getPrice() + 1)
-    myStore.aggregateRevenue()
+    allPlayers[0].changePrice(allPlayers[0].getPrice() + 1)
+    allPlayers[0].aggregateRevenue()
     days += 1
 
-print("In total, we operated for " + str(days) + " days and made $" + str(myStore.getTotalRevenue()) + " in revenue.")
+print("In total, we operated for " + str(days) + " days and made $" + str(allPlayers[0].getTotalRevenue()) + " in revenue.")
