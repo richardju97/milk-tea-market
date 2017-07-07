@@ -5,7 +5,7 @@ import population
 import store
 
 numPlayers = int(input("Enter Number of Players Playing: "))
-populationSize = input("Enter desired population size for this simulation: ")
+populationSize = int(input("Enter desired population size for this simulation: "))
 allPlayers = []
 
 for x in range(0, numPlayers):
@@ -17,8 +17,9 @@ for x in range(0, numPlayers):
     #myStore = store.Store(myStoreName, myStorePrice)
     #print(myStore)
 
-p = population.generatePopulation(int(populationSize))
-print(p)
+p = population.generatePopulation(populationSize)
+print(p) #only here for dev/debugging purposes
+print("There are " + str(len(p)) + " potential customers.")
 
 # At the moment preferences only contains maximum value point (how much the customer is willing to pay at most)
 sales = None
@@ -30,12 +31,13 @@ while (allPlayers[0].getPrice() < 11 and sales != 0):
             allPlayers[0].processSale()
             sales += 1
 
-    print("There are " + str(len(p)) + " potential customers.")
-    print("We had " + str(sales) + " sales at $" + str(allPlayers[0].getPrice()) + " per sale.")
-    print("We made $" + str(allPlayers[0].getDailyRevenue()) + " today.")
-    print("----------------------\n")
-    allPlayers[0].changePrice(allPlayers[0].getPrice() + 1)
-    allPlayers[0].aggregateRevenue()
-    days += 1
+    for x in range(0, numPlayers):
+        print("We had " + str(sales) + " sales at $" + str(allPlayers[x].getPrice()) + " per sale.")
+        print("We made $" + str(allPlayers[x].getDailyRevenue()) + " today.")
+        print("----------------------\n")
+        allPlayers[x].changePrice(allPlayers[x].getPrice() + 1)
+        allPlayers[x].aggregateRevenue()
+        days += 1
 
+print("End of Simulation Results:")
 print("In total, we operated for " + str(days) + " days and made $" + str(allPlayers[0].getTotalRevenue()) + " in revenue.")
