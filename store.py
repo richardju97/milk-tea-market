@@ -24,7 +24,7 @@ class Store:
         self.price = int(price)
 
     def processSale(self):
-        self.sales += 1
+        self.dailySales += 1
         self.dailyrevenue += self.price
 
     def getDailyRevenue(self):

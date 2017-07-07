@@ -1,6 +1,7 @@
 # game.py
 # Runs the entire game/simulation
 
+from random import randint
 import population
 import store
 
@@ -33,10 +34,10 @@ while (day != maxDays):
     for i in p:
         if (i >= allPlayers[0].getPrice()):
             # for now we assume that all places have the same price
-            decision = randint(0, numPlayers)
+            decision = randint(0, numPlayers-1)
             allPlayers[decision].processSale()
 #            sales += 1
-            
+
 
     for x in range(0, numPlayers):
         print("We had " + str(sales) + " sales at $" + str(allPlayers[x].getPrice()) + " per sale.")
