@@ -10,6 +10,8 @@ populationSize = int(input("Enter desired population size for this simulation: "
 maxDays = int(input("Enter maximum number of operation days: "))
 allPlayers = []
 
+print("----------------------\n")
+
 for x in range(0, numPlayers):
 
     myStoreName = input("Please select your store's name: ")
@@ -38,15 +40,16 @@ while (day != maxDays):
             allPlayers[decision].processSale()
 #            sales += 1
 
-
+    print("Day " + str(day+1))
     for x in range(0, numPlayers):
-        print(str(allPlayers[x].getName()) + " had " + str(allPlayers[x].getDailySales()) + " sales at $" + str(allPlayers[x].getPrice()) + " per sale.")
-        print("We made $" + str(allPlayers[x].getDailyRevenue()) + " today.")
-        print("----------------------\n")
+        print(str(allPlayers[x].getName()) + " had " + str(allPlayers[x].getDailySales()) + " sales at $" + str(allPlayers[x].getPrice()) + " per sale, earning a total of " + str(allPlayers[x].getDailyRevenue()))
+#        print("We made $" + str(allPlayers[x].getDailyRevenue()) + " today.")
+#        print("----------------------\n")
         allPlayers[x].changePrice(allPlayers[x].getPrice() + 1)
         allPlayers[x].aggregateRevenue()
 #        days += 1
     day += 1
+    print("----------------------\n")
 
 print("End of Simulation Results:")
 
