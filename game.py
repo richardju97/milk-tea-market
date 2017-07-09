@@ -47,7 +47,8 @@ while (day != maxDays):
 #        print("We made $" + str(allPlayers[x].getDailyRevenue()) + " today.")
 #        print("----------------------\n")
         allPlayers[x].changePrice(allPlayers[x].getPrice() + 1)
-        allPlayers[x].aggregateRevenue()
+        if (allPlayers[x].getDailyRevenue() != 0):
+            allPlayers[x].aggregateRevenue()
 #        days += 1
     day += 1
     print("----------------------\n")
