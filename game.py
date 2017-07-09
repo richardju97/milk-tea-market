@@ -5,6 +5,7 @@ from random import randint
 import population
 import store
 
+print("Welcome to Milk Tea Mania! Please configure your settings:")
 numPlayers = int(input("Enter Number of Players Playing: "))
 populationSize = int(input("Enter desired population size for this simulation: "))
 maxDays = int(input("Enter maximum number of operation days: "))
