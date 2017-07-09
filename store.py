@@ -10,7 +10,13 @@ class Store:
         self.totalrevenue = 0
         self.dailyrevenue = 0
         self.opDays = 0
-        self.stats = []
+
+        # self.stats = []
+        # daily sales, daily revenue, daily profit
+
+        self.salesData = []
+        self.revenueData = []
+        self.profitData = []
 
 # need inventory attributes
 
@@ -32,8 +38,10 @@ class Store:
 
     def aggregateRevenue(self):
         self.totalrevenue += self.dailyrevenue
+        self.revenueData.append(self.dailyrevenue)
         self.dailyrevenue = 0
         self.totalSales += self.dailySales
+        self.salesData.append(self.dailySales)
         self.dailySales = 0
         self.opDays += 1
 
