@@ -3,7 +3,12 @@
 
 import matplotlib.pyplot as plt
 
-def generateGraph(data, label):
-    plt.plot(data)
-    plt.ylabel(label)
+def generateGraph(data1, label1, data2, label2):
+    plt.subplot(2, 1, 1)
+    plt.plot(data1)
+    plt.ylabel(label1)
+    plt.subplot(2, 1, 2)
+    plt.plot(data2)
+    plt.ylabel(label2)
+    
     plt.show()

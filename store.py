@@ -60,5 +60,5 @@ class Store:
         return self.totalSales
 
     def showStats(self):
-        stats.generateGraph(self.salesData, "Daily Sales")
-        stats.generateGraph(self.revenueData, "Daily Revenue")
+        stats.generateGraph(self.salesData, "Daily Sales", self.revenueData, "Daily Revenue")
+#        stats.generateGraph(self.revenueData, "Daily Revenue")
