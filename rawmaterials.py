@@ -8,3 +8,9 @@ class RawMaterial:
 
     def adjustPrice(self, delta):
         self.price += delta
+
+    def getName(self):
+        return self.name
+
+    def getPrice(self):
+        return self.price
