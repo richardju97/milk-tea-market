@@ -1,6 +1,8 @@
 # store.py
 # Handles store objects for each player
 
+import stats
+
 class Store:
     def __init__(self, name, price):
         self.name = name
@@ -56,3 +58,7 @@ class Store:
 
     def getTotalSales(self):
         return self.totalSales
+
+    def showStats(self):
+        stats.generateGraph(self.salesData, "Daily Sales")
+        stats.generateGraph(self.revenueData, "Daily Revenue")

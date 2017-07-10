@@ -57,3 +57,5 @@ print("End of Simulation Results:")
 
 for y in range(0, numPlayers):
     print(str(allPlayers[y].getName()) + " operated for " + str(allPlayers[y].getOpDays()) + " days and made $" + str(allPlayers[y].getTotalRevenue()) + " in revenue.")
+
+allPlayers[0].showStats()
