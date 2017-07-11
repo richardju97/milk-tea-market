@@ -4,23 +4,26 @@
 from random import randint
 import population
 import store
+import market
 
 print("Welcome to Milk Tea Mania! Please configure your settings:")
 numPlayers = int(input("Enter Number of Players Playing: "))
 populationSize = int(input("Enter desired population size for this simulation: "))
 maxDays = int(input("Enter maximum number of operation days: "))
-allPlayers = []
+#allPlayers = []
 
 print("----------------------\n")
 
-for x in range(0, numPlayers):
+#for x in range(0, numPlayers):
+#
+#    myStoreName = input("Please select your store's name: ")
+#    myStorePrice = input("Please select what price to sell your boba: ")
+#    print("----------------------\n")
+#    allPlayers.append(store.Store(myStoreName, myStorePrice))
+#    #myStore = store.Store(myStoreName, myStorePrice)
+#    #print(myStore)
 
-    myStoreName = input("Please select your store's name: ")
-    myStorePrice = input("Please select what price to sell your boba: ")
-    print("----------------------\n")
-    allPlayers.append(store.Store(myStoreName, myStorePrice))
-    #myStore = store.Store(myStoreName, myStorePrice)
-    #print(myStore)
+allPlayers = market.createMarket(numPlayers)
 
 p = population.generatePopulation(populationSize)
 print(p) #only here for dev/debugging purposes
@@ -57,5 +60,4 @@ print("End of Simulation Results:")
 
 for y in range(0, numPlayers):
     print(str(allPlayers[y].getName()) + " operated for " + str(allPlayers[y].getOpDays()) + " days and made $" + str(allPlayers[y].getTotalRevenue()) + " in revenue.")
-
-allPlayers[0].showStats()
+    allPlayers[y].showStats()
