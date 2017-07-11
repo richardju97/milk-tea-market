@@ -42,6 +42,7 @@ while (day != maxDays):
             # for now we assume that all places have the same price
             decision = randint(0, numPlayers-1)
             allPlayers[decision].processSale()
+            allPlayers[decision].addRating(randint(1, 5))
 #            sales += 1
 
     print("Day " + str(day+1))
