@@ -47,7 +47,7 @@ while (day != maxDays):
 
     print("Day " + str(day+1))
     for x in range(0, numPlayers):
-        print(str(allPlayers[x].getName()) + " had " + str(allPlayers[x].getDailySales()) + " sales at $" + str(allPlayers[x].getPrice()) + " per sale, earning a total of " + str(allPlayers[x].getDailyRevenue()))
+        print(str(allPlayers[x].getName()) + " - Sales ($" + str(allPlayers[x].getPrice()) + "):x $" + str(allPlayers[x].getDailySales())  + " - Revenue: $" + str(allPlayers[x].getDailyRevenue()) + " - Rating: " + str(allPlayers[x].getRating()))
 #        print("We made $" + str(allPlayers[x].getDailyRevenue()) + " today.")
 #        print("----------------------\n")
         allPlayers[x].changePrice(allPlayers[x].getPrice() + 1)
