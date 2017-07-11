@@ -12,6 +12,9 @@ class Store:
         self.totalrevenue = 0
         self.dailyrevenue = 0
         self.opDays = 0
+        self.rating = 0
+        self.totalRating = 0
+        self.numRatings = 0
 
         # self.stats = []
         # daily sales, daily revenue, daily profit
@@ -62,3 +65,11 @@ class Store:
     def showStats(self):
         stats.generateGraph(self.salesData, "Daily Sales", self.revenueData, "Daily Revenue")
 #        stats.generateGraph(self.revenueData, "Daily Revenue")
+
+    def getRating(self):
+        return self.rating
+
+    def addRating(self, rating):
+        self.totalRating += rating
+        self.numRatings += 1
+        self.rating = self.totalRating / self.numRatings
