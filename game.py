@@ -60,5 +60,5 @@ while (day != maxDays):
 print("End of Simulation Results:")
 
 for y in range(0, numPlayers):
-    print(str(allPlayers[y].getName()) + " operated for " + str(allPlayers[y].getOpDays()) + " days and made $" + str(allPlayers[y].getTotalRevenue()) + " in revenue.")
+    print(str(allPlayers[y].getName()) + " - Operation Days: " + str(allPlayers[y].getOpDays()) + " - Revenue: $" + str(allPlayers[y].getTotalRevenue()) + " - Rating: " + str(allPlayers[y].getRating()))
     allPlayers[y].showStats()
