@@ -2,12 +2,15 @@
 # Contains information about the entire market (e.g. supply costs)
 
 import rawmaterials
+import store
 
 class Event:
     def __init__():
         self.action = 0
 
 boba = rawmaterials.RawMaterial("Boba", 0, 0)
+rent = rawmaterials.Rawmaterial("Rent", 0, 0)
+tea = rawmaterials.RawMaterial("Tea", 0, 0)
 
 #print (boba.getName())
 #print (boba.getPrice())
