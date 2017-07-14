@@ -16,6 +16,9 @@ class Store:
         self.totalRating = 0
         self.numRatings = 0
 
+        self.menu = []
+        self.inventory = {}
+
         # self.stats = []
         # daily sales, daily revenue, daily profit
 
@@ -73,3 +76,7 @@ class Store:
         self.totalRating += rating
         self.numRatings += 1
         self.rating = self.totalRating / self.numRatings
+
+# def addMenuItem(self):
+# def addInventoryItem(self):
+# def purchaseItem(self):
