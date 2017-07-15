@@ -79,4 +79,8 @@ class Store:
 
 # def addMenuItem(self):
 # def addInventoryItem(self):
-# def purchaseItem(self):
+    def purchaseItem(self, item):
+        self.inventory[item] = 10
+
+    def getInventory(self):
+        return self.inventory

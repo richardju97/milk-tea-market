@@ -13,7 +13,7 @@ maxDays = int(input("Enter maximum number of operation days: "))
 
 print("----------------------\n")
 
-allPlayers = market.createMarket(numPlayers)
+allPlayers, allRawMaterials = market.createMarket(numPlayers)
 
 p = population.generatePopulation(populationSize)
 print(p) #only here for dev/debugging purposes
@@ -40,8 +40,11 @@ while (day != maxDays):
     day += 1
     print("----------------------\n")
 
+allPlayers[0].purchaseItem(allRawMaterials[0])
+
 print("End of Simulation Results:")
 
 for y in range(0, numPlayers):
     print(str(allPlayers[y].getName()) + " - Operation Days: " + str(allPlayers[y].getOpDays()) + " - Revenue: $" + str(allPlayers[y].getTotalRevenue()) + " - Rating: " + str(allPlayers[y].getRating()))
     allPlayers[y].showStats()
+    print(allPlayers[0].getInventory())

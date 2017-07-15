@@ -17,13 +17,14 @@ tea = rawmaterials.RawMaterial("Tea", 0, 0)
 
 def createMarket(n):
     a = []
+    b = [boba, rent, tea]
     for x in range(0, n):
     
         myStoreName = input("Please select your store's name: ")
         myStorePrice = input("Please select what price to sell your boba: ")
         print("----------------------\n")
         a.append(store.Store(myStoreName, myStorePrice))
-    return a
+    return a, b
 
 #myStore = store.Store(myStoreName, myStorePrice)
 #print(myStore)
